@@ -1,6 +1,8 @@
 # OPS_note
-
+  
   a place where everyone can share their knowledge, experiences
+
+  == use the wiki page directly to make notes or you can even upload your code ==
 
 /*OPenSourcing NOTE*/
 
