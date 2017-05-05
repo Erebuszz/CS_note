@@ -1,6 +1,6 @@
-# Python notes
+#  Python notes
 
-> noted by Erebuszz, modified on 5/5/2017
+>  noted by Erebuszz, modified on 5/5/2017
 
 ## Basic operation
 
