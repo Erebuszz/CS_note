@@ -61,4 +61,3 @@ Every time we assign a new value to the variable, its identity changes
     4324422576
 
 ### <font color="lightblue">- String Concatenation</font>
-
