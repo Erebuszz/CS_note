@@ -1,10 +1,8 @@
-# Python Notes
-
 * noted by Erebuszz, modified on 5/6/2017
 
-## Basic Operation
+# Basic Operation
 
-### <font color="lightblue">- Print</font>
+## <font color="lightblue">- Print</font>
 
 In Python 2, <b>print</b> is a statement
 
@@ -14,7 +12,7 @@ In Python 3, print was turned into a print function
 
     print("Hello from Python!")
 
-### <font color="lightblue">- Comments</font>
+## <font color="lightblue">- Comments</font>
 
     # one line comment
 
@@ -23,9 +21,9 @@ In Python 3, print was turned into a print function
     and this
     """
 
-## Strings
+# Strings
 
-### <font color="lightblue">- Create a string</font>
+## <font color="lightblue">- Create a string</font>
 
 You can use single , double or triple quotes one of three ways
 
@@ -63,7 +61,7 @@ its identity changes
     >>> id(string)
     4324422576
 
-### <font color="lightblue">- String Concatenation</font>
+## <font color="lightblue">- String Concatenation</font>
 
     >>> string_one = "My dog ate "
     >>> string_two = "my homework."
@@ -71,7 +69,7 @@ its identity changes
     >>> string_three
     'My dog ate my homework.'
 
-### <font color="lightblue">- String Methods</font>
+## <font color="lightblue">- String Methods</font>
 
 > Everything in Python is an object
 
@@ -104,5 +102,5 @@ Tell what type the variable is
     >>> type(my_string)
     <class 'str'>
 
-### <font color="lightblue">- String Slicing</font>
+## <font color="lightblue">- String Slicing</font>
 
