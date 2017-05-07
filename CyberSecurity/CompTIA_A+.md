@@ -110,7 +110,6 @@ In the situation when your computer was stolen
 
 ## Input / Output Ports
 
-![Image of ATX]
-(https://computerhope.cachefly.net/bigmb.jpg)
+![Image of ATX](https://computerhope.cachefly.net/bigmb.jpg)
 
 > Memories are usually close to the CPU for the faster information communication
