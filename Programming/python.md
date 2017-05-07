@@ -6,20 +6,26 @@
 
 In Python 2, <b>print</b> is a statement
 
-    print "Hello from Python!"
+```python
+print "Hello from Python!"
+```
 
 In Python 3, print was turned into a print function
 
-    print("Hello from Python!")
+```python
+print("Hello from Python!")
+```
 
 ## <font color="lightblue">- Comments</font>
 
-    # one line comment
+```python
+# one line comment
 
-    """ Multiline examples
-    like this
-    and this
-    """
+""" Multiline examples
+like this
+and this
+"""
+```
 
 # Strings
 
@@ -27,11 +33,13 @@ In Python 3, print was turned into a print function
 
 You can use single , double or triple quotes one of three ways
 
-    my_string = "Welcome to Python!"
-    another_string = 'Bla Bla Bla'
-    a_long_string = '''This is a 
-    multi-line string. It covers more than 
-    one line.'''
+```python
+my_string = "Welcome to Python!"
+another_string = 'Bla Bla Bla'
+a_long_string = '''This is a 
+multi-line string. It covers more than 
+one line.'''
+```
 
 The triple quoted line can be done with 
 three single quotes or three double quotes
@@ -40,16 +48,20 @@ You will noticed that
 output retains the line breaks if you print it out
 
 use the <b>str</b> methods
-    
-    my_number = 123
-    my_string = str(my_number)
+
+```python
+my_number = 123
+my_string = str(my_number)
+```
 
 > Noted: string is one of Python <b>immutable</b> types
 
 So, this will cause an error
 
-    my_string = "abc"
-    my_string[0] = "d"
+```python
+my_string = "abc"
+my_string[0] = "d"
+```
 
 Every time we assign a new value to the variable, 
 its identity changes
@@ -83,7 +95,7 @@ such as <b>upper()</b>
 Type the following command in your interpreter 
 to get a list of all the string methods:
 
-    dir(my_string)
+    >>> dir(my_string)
 
 To learn what the methods is for, 
 just ask for <b>help()</b><br>eg.

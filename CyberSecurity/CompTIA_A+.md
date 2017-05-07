@@ -107,3 +107,10 @@ In the situation when your computer was stolen
 
 * 6.7 x 6.7 inches
 * 1 PCI extension slot, for small-size desktop
+
+## Input / Output Ports
+
+![Image of ATX]
+(https://computerhope.cachefly.net/bigmb.jpg)
+
+> Memories are usually close to the CPU for the faster information communication
