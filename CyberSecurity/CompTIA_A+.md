@@ -108,8 +108,10 @@ In the situation when your computer was stolen
 * 6.7 x 6.7 inches
 * 1 PCI extension slot, for small-size desktop
 
-## Input / Output Ports
+## Input / Output Ports
 
-![Image of ATX](https://computerhope.cachefly.net/bigmb.jpg)
+![Image of ATX](https://computerhope.cachefly.net/motherboard.jpg)
 
-> Memories are usually close to the CPU for the faster information communication
+* Memories are usually close to the CPU for the faster information communication
+
+* <b>Jumpers</b> are several pins on the motherboard, we can put jumper blocks on them and connect in order to make additional configuration

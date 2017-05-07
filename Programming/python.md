@@ -1,6 +1,6 @@
 * noted by Erebuszz, modified on 5/6/2017
 
-# Basic Operation
+# Basic Intro
 
 ## <font color="lightblue">- Print</font>
 
@@ -47,7 +47,7 @@ three single quotes or three double quotes
 You will noticed that 
 output retains the line breaks if you print it out
 
-use the <b>str</b> methods
+### Use the <b>str</b> methods
 
 ```python
 my_number = 123
@@ -56,7 +56,7 @@ my_string = str(my_number)
 
 > Noted: string is one of Python <b>immutable</b> types
 
-So, this will cause an error
+So, the following example will cause an error
 
 ```python
 my_string = "abc"
@@ -92,8 +92,7 @@ such as <b>upper()</b>
     >>> my_string.upper()
     'ABC'
 
-Type the following command in your interpreter 
-to get a list of all the string methods:
+### Get a list of all the string methods:
 
     >>> dir(my_string)
 
@@ -109,10 +108,65 @@ just ask for <b>help()</b><br>eg.
         Return a capitalized version of S, i.e. make the first character
         have upper case and the rest lower case.
 
-Tell what type the variable is
+### Tell what type the variable is
     
     >>> type(my_string)
     <class 'str'>
 
 ## <font color="lightblue">- String Slicing</font>
+
+    >>> my_string = "I love Python!"
+    >>> my_string[:1]
+    'I'
+
+> From the example we can see that this grabs the 1st character in the string up to, but <b>not</b> including the 2nd character.
+
+### More examples : 
+
+    >>> my_string[:13]
+    'I love Python'
+    >>> my_string[0:14]
+    'I love Python!'
+    >>> my_string[0:-1]
+    'I love Python'
+    >>> my_string[:]
+    'I love Python!'
+    >>> my_string[2:]
+    'love Python!'
+
+## <font color="lightblue">- String Formatting (AKA Substitution)</font>
+
+### Old Way of Substituting Strings
+
+    >>> my_string = "I love %s" % "Python"
+    >>> my_string
+    'I love Python'
+    >>> var = "pizza"
+    >>> my_string = "I hate %s" % var
+    >>> my_string
+    'I hate pizza'
+    >>> my_string = "I love %s but not %s" % ("Python", var)
+    >>> my_string
+    'I love Python but not pizza'
+
+Examples of integers and floats
+
+```python
+print("%i + %i = %i" % (1, 2, 3))
+print("i = %f" % (9))
+print("j = %.4f" % (3.14159))
+print("k = %2i" % (5))
+print("l = %2i" % (15))
+print("m = %-2i" % (5))
+print("o = %-2i" % (15))
+```
+Here's the output 
+
+    1 + 2 = 3
+    i = 9.000000
+    j = 3.1416
+    k =  5
+    l = 15
+    m = 5 
+    o = 15
 
