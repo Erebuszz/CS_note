@@ -84,7 +84,7 @@ If a weakness was discovered, go back to step one and reselect a security contro
 
 # Security vs Privacy vs Anonymity - Can we have it all?
 
-Security is sometimes contradiction to Privacy and Anonymity
+Security is sometimes contradiction to Privacy and Anonymity
 
 -  The amount of privacy and anonymity that you require is directly proportional to the security that you need
 
