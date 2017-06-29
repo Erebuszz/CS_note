@@ -111,3 +111,24 @@ Complexity is the enemy of security
 ## Drive-by Attack
 
 - Simply visiting a website that contains code to exploit your machine
+
+## Spyware
+
+- Main purpose is to gather information and send it back to the attacker
+- Don't generally want to cause damage directly, but want to compromise your privacy and anonymity
+
+## Adware
+
+- Some people consider it to be a form of spyware
+- Undesirable software that forces advertisement on you
+- Hijacks your default search engines, display ads in the browser, sometimes takes you to places it wants you to go to instead of where you want to actually go to when you click on links, actively defends itself from being removed -> **Browser Hijacking**
+
+## Scareware
+
+- A type of social engineering attack to trick a person into believing a threat that isn't really real
+
+## Potentially Unwanted Programs (PUPs)
+
+- The antivirus companies and people that attempt to remove these things aren't quite sure whether you want them or not
+- Often bundled in the software when you install
+- Make sure when you install software, you go through the custom install and make sure you remove any of these PUPs
