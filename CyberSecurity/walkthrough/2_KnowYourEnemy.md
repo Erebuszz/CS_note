@@ -20,7 +20,7 @@ Credit: Comparing Expert and Non-Expert Security Practices - Usenix
 
 - An error written into software that creates a potential for a threat agent, such as a hacker, to exploit it
 
-Complexity is the enemy of security
+> Complexity is the enemy of security
 
 ## Known Bugs
 
@@ -132,3 +132,65 @@ Complexity is the enemy of security
 - The antivirus companies and people that attempt to remove these things aren't quite sure whether you want them or not
 - Often bundled in the software when you install
 - Make sure when you install software, you go through the custom install and make sure you remove any of these PUPs
+
+# What is Phishing, Vishing and SMShing?
+
+## Phishing
+
+- A type of attack that typically attempts to trick the victim into clicking on a link or executing malware in some way
+- Typically carried out by sending fake emails or instant messages as well
+- Direct victims to a fake site, often resembles a legitimate site
+- A form of **social engineering** (An attack against human weaknesses)
+- Also relies on the lack of defenses the web technologies inherently have
+- Generally done on a mass number
+- If a targeted and specific attack: **spear fishing**
+
+### Techniques
+
+- Link Manipulation
+    * Subdomains & Misspelt
+        * http://www.google.com.evil.org
+        * http://evil.org/sa/google.com/support/
+        * http://www.rnicrosoft.com
+    * IDN homograph attack
+        * http://www.g00gle.com
+        * http://www.goog1e.com
+    * Hidden URLs
+        * [Click Here](http://www.google.com.evil.org)
+        * [https://www.google.com](http://www.google.com.evil.org)
+    > Can also be combined with Open Redirect, XSS, CSFR, etc.
+
+ ## Vishing
+
+ - Phone or voice phishing
+
+ ## Smishing
+
+ - SMS phishing or sending text messages
+
+### Related Resourses
+
+- [Live Phishing Links](https://www.openphish.com/)
+    
+- [Homograph attack using internationalized domain name](https://hethical.io/homograph-attack-using-internationalized-domain-name/)
+
+# Spamming & Doxing
+
+## Spam
+
+- Unsolicited messages most often coming in email
+- Also comes from instant messages, forums, social media, and even text messages now
+- Mostly it's to advertise some sort of products
+- Small operating cost
+
+## Doxing
+
+-  Dox: An abbreviation of Document
+- To do research on an individual, or orginization or company to find personal and private information
+- Often in order to cause embarrassment, discredit, harass, coerce by publicly releasing the information or the threat to publicly release it
+- Can be achieved by simply searching on the internet and looking up public records
+
+### Related Resourses
+
+- [Spam Stats](https://www.av-test.org/en/statistics/spam/)
+- [Spam Example](http://www.consumerfraudreporting.org/spamexamples/OnlinePharmacy-spamexample.php)
