@@ -194,3 +194,71 @@ Credit: Comparing Expert and Non-Expert Security Practices - Usenix
 
 - [Spam Stats](https://www.av-test.org/en/statistics/spam/)
 - [Spam Example](http://www.consumerfraudreporting.org/spamexamples/OnlinePharmacy-spamexample.php)
+
+# Social Engineering - Scams, cons, tricks and fraud
+
+- A term used in the Security Industry to refer to attacks that center on weakneses in the human being
+
+- [Top Ten Scams](http://www.consumerfraudreporting.org/current_top_10_scam_list.php)
+
+# Darknets, Dark Markets and Exploit kits
+
+- Also known as Darkweb, is a general term for any encrypted overlay network that you can only access with specific types of software or authorizations, or protocols, or ports
+- The conventional internet like Facebook, Google would be called the **Clearnet** or **suface web** as a reciprocal term
+- The main differense being you need to use specific encryption to access it
+- Generally cannot be searched with Google but Tor might indexed it
+- Used by governments, military, companies and anyone who needs privacy, plus criminals
+- A tool to maintain anonymity and is in some sense, to maintain security
+    - eg. Retroshare, Tor, I2P Anonymous, Gnunet framework, Freenet project
+- Through the darknet, you can access dark markets and hack forums
+    - [Darknet Market Comparison Chart](https://www.deepdotweb.com/dark-net-market-comparison-chart/)
+    - [the Hidden Wiki - H/P/A/W/V/C](http://zqktlwi4fecvo6ri.onion/wiki/index.php/Main_Page#H.2FP.2FA.2FW.2FV.2FC) (Can only accessed with Tor)
+    - [0day Forum](http://qzbkwswfv5k2oj5d.onion/)
+- The number of exploit kits are growing exponentially, script kiddles can buy them on dark markets, making the average intruder knowledge is now low
+
+# Governments, spies and secret stuff
+
+- Active mass surveillance is happening accross many countries
+- An agreement exists between these countries to co-operatively collect, analyze, and share intelligense
+    - 5 Eyes
+        1. the UK
+        2. the US
+        3. Australia
+        4. Canada
+        5. New Zealand
+    - 9 Eyes
+        
+        6. Denmark
+        7. France
+        8. Netherlands
+        9. Norway
+    - 14 Eyes
+
+        10. Belgium
+        11. Germany
+        12. Italy
+        13. Spain
+        14. Sweden
+- Carnivore, ECHELON and NarusInsight, used to intercept and analyze immense amount of data that traverse the internet and telephone systems
+- [Utah Data Center](https://en.wikipedia.org/wiki/Utah_Data_Center)
+- [ANT catologue](https://nsa.gov1.info/dni/nsa-ant-catalog/ ), an elite document of the NSA's hacking and spying tool set circa around 2008
+- [NSA Playset](http://www.nsaplayset.org/), Inspired by the NSA ANT catalog
+- [NSA codenames](https://cryptome.org/2014/01/nsa-codenames.htm)
+- Further listening: [Through a PRISM, Darkly Everything we know about NSA spying 30c3](https://www.youtube.com/watch?v=e4woRYs0mM4)
+
+# Regulating encryption, mandating insecurity & legalizing spying
+
+- [UK data communications bill](https://en.wikipedia.org/wiki/Draft_Communications_Data_Bill)
+- [WhatsApp was Banned for 48 Hours in Brazil](https://www.pcmag.com/article2/0,2817,2496766,00.asp)
+- [How India Regulates Encryption](https://cis-india.org/internet-governance/blog/how-india-regulates-encryption)
+- [Kazakhstan's New Encryption Law Could Be a Preview of U.S. Policy](https://www.theatlantic.com/technology/archive/2015/12/kazakhstans-new-encryption-law-could-be-a-preview-of-us-policy/419250/)
+- [Matt Blaze Speaking to a US congressional committee](https://youtu.be/zk78_zmH4QI?t=1870)
+- [Report - Keys Under Doormats: Mandating insecurity by requiring government access to all data and communication](https://dspace.mit.edu/bitstream/handle/1721.1/97690/MIT-CSAIL-TR-2015-026.pdf?sequence=8)
+- [The Case against Regulating Encryption Technology](https://people.csail.mit.edu/rivest/pubs/Riv98e.pdf)
+- [A Worldwide Survey of Encryption Products - pdf](https://www.schneier.com/academic/paperfiles/worldwide-survey-of-encryption-products.pdf)
+- [A Worldwide Survey of Encryption Products - xls](https://www.schneier.com/academic/paperfiles/worldwide-encryption-product-survey-data.xls)
+- [NSA Admits It Collects Too MUCH Info to Stop Terror Attacks](http://www.washingtonsblog.com/2015/05/nsa-admits-it-collects-too-much-info-to-stop-terror-attacks.html)
+- [US HOUSE OF REPRESENTATIVES
+COMMITTEE ON GOVERNMENT OVERSIGHT AND REFORM
+INFORMATION TECHNOLOGY SUBCOMMITTEE
+ENCRYPTION TECHNOLOGY AND POSSIBLE US POLICY RESPONSES](http://www.crypto.com/papers/governmentreform-blaze2015.pdf)
