@@ -262,3 +262,30 @@ Credit: Comparing Expert and Non-Expert Security Practices - Usenix
 COMMITTEE ON GOVERNMENT OVERSIGHT AND REFORM
 INFORMATION TECHNOLOGY SUBCOMMITTEE
 ENCRYPTION TECHNOLOGY AND POSSIBLE US POLICY RESPONSES](http://www.crypto.com/papers/governmentreform-blaze2015.pdf)
+
+# Trust & Backdoors
+
+- One approach to avoid bugs is to create non-complex systems. But this is infeasible
+- Another approach is to use what is called [Formal methods](https://en.wikipedia.org/wiki/Formal_methods), through testing and proving properties of that system (still too time consuming and cost prohibitive for most systems)
+- We need to reduce attack surface, create isolation and compartmentalization and build layers of defense
+- If something is Closed source, the only way to find backdoors is through a process called **Reverse engineering**
+
+## How do we mitigate the risks from Backdoors?
+- [reproducible builds](https://reproducible-builds.org/) --> Recommended OS: [Debian](https://www.debian.org/intro/why_debian)
+- [deterministic builds](https://blog.torproject.org/blog/deterministic-builds-part-one-cyberwar-and-global-compromise)
+
+### Related resourses
+- [Proprietary Back Doors](https://en.wikipedia.org/wiki/Formal_methods) (take these with a pinch of salt)
+- [Apple Removes Malware-Infected Apps From the App Store](https://variety.com/2015/digital/news/apple-removes-malware-infected-apps-from-the-app-store-1201598650/)
+- [Here’s Why Apple Is Going To War Over FBI ‘Backdoor’ Order](http://fortune.com/2016/02/17/apple-backdoor-order/)
+- [On the Juniper backdoor](https://blog.cryptographyengineering.com/2015/12/22/on-juniper-backdoor/)
+- [Video on how to build your own software reproducibly](https://media.ccc.de/v/camp2015-6657-how_to_make_your_software_build_reproducibly)
+
+# Censorship
+
+- [Google Censorship Ruling in Canada Has Worldwide Implications](https://searchenginewatch.com/sew/news/2351154/google-censorship-ruling-in-canada-has-worldwide-implications)
+- [Search removals under European privacy law
+](https://transparencyreport.google.com/eu-privacy/overview)
+- [Government requests to remove content](https://transparencyreport.google.com/government-removals/overview)
+
+# Security News and Alerts – Stay Informed
