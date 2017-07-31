@@ -55,9 +55,6 @@ n, N|搜尋字串時，用 n 來繼續下一個搜尋、 N 來進行『反向』
 |[End]|去到最後一頁|
 |q|結束這次的 man page|
 	
-	資料: /usr/share/man
-	設定檔: /etc/man_db.conf (有的版本為 man.conf 或 manpath.conf 或 man.config 等) 
-	
 	$ whatis 指令或資料 	<== 相當於 man -f 指令或者是資料
 	$ apropos 指令或資料 	<== 相當於 man -k 指令或者是資料
 	以上兩個指令須先以 root 身份建立 whatis 資料庫：
@@ -138,10 +135,6 @@ n, N|搜尋字串時，用 n 來繼續下一個搜尋、 N 來進行『反向』
 			當該檔案的『狀態 (status)』改變時，如權限與屬性
 		3. access time (atime)：
 			當『該檔案的內容被取用』時，如使用 cat 去讀取檔案時
-
-	/etc/profile 	// 每個使用者登入取得 bash 時一定會讀取的設定檔
-			想要幫所有使用者設定整體環境時更動
-	/etc/passwd	// ID 與帳號的對應
 
 	$ ls	// 列出(list)當前目錄的檔案、資料夾(預設)
 		-a	// 列出所有包括隱藏檔(ex: .vimrc)
