@@ -27,7 +27,7 @@
 		* [Ctrl]-C	中斷目前程式
 		* [Ctrl]-D	鍵盤輸入結束 (End Of File, EOF 或 End Of Input) ($ exit)
 		* [Ctrl]-Z 	將『目前』的工作丟到背景中『暫停』
-		* [Ctrl]-L	清除畫面 ($ clear)
+		* [Ctrl]-L	清除畫面 ($ clear)
 		* [shift] + [Page Up] | [Page Down]	往前翻頁 或 往後翻頁
 	* 可用分號 (;) 分隔各指令，將多行命令打在同一行
 	* 邏輯運算元：
