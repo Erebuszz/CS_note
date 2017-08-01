@@ -2,7 +2,8 @@
 - [線上求助及檔案搜尋](#help_search)
 - [檔案、目錄基本操作](#basic)
 
-# 指令結構 <a name="instruc"></a>
+<a name="instruc"></a>
+# 指令結構
 
 | command | options | parameter1 | parameter2 | ... |
 | -- | -- | --| -- | -- |
@@ -21,14 +22,14 @@
 * 在 Linux 系統中，英文大小寫字母是不一樣的
 * Linux 預設的情況下會提供六個 Terminal 來讓使用者登入， 切換的方式為使用：[Ctrl] + [Alt] + [F1]~[F6]
 	* [Ctrl] + [Alt] + [F2] ~ [F6] ：文字介面登入 tty2 ~ tty6 終端機；
-	* [Ctrl] + [Alt] + [F1] ：CentOS 圖形介面預設位置 (Ubuntu: F7)
+	* [Ctrl] + [Alt] + [F1] ：CentOS 圖形介面預設位置 (Ubuntu: F7)
 	* 快捷鍵：
 		* [Ctrl]-C	中斷目前程式
 		* [Ctrl]-D	鍵盤輸入結束 (End Of File, EOF 或 End Of Input) ($ exit)
 		* [Ctrl]-Z 	將『目前』的工作丟到背景中『暫停』
 		* [Ctrl]-L	清除畫面 ($ clear)
-		* [shift] + [Page Up] | [Page Down]	往前翻頁 或 往後翻頁
-	* 可用分號 (;) 分隔各指令，將多行命令打在同一行
+		* [shift] + [Page Up] | [Page Down]	往前翻頁 或 往後翻頁
+	* 可用分號 (;) 分隔各指令，將多行命令打在同一行
 	* 邏輯運算元：
 		```
 		$ cmd1 || cmd2	// 執行cmd1，如果 cmd1 失敗才會執行 cmd2
@@ -40,7 +41,8 @@
 	   [Tab] 接在一串指令的第二個字以後時，則為『檔案補齊』<br>
 	   若安裝 bash-completion 軟體，則在某些指令後面使用 [Tab] 按鍵時，可以進行『選項/參數的補齊』功能
 
-# 線上求助及檔案搜尋 <a name="help_search"></a>
+<a name="help_search"></a>
+# 線上求助及檔案搜尋
 
 	$ 指令 --help	// 通常用在協助你查詢『你曾經用過的指令所具備的選項與參數』
 	$ man 指令或資料	// manual，查詢從來沒有用過的指令，或者是檔案的『格式』
@@ -108,7 +110,8 @@ n, N|搜尋字串時，用 n 來繼續下一個搜尋、 N 來進行『反向』
 		-exec 指令 {} \;	// 找到後要執行的指令
 		-ok 指令		// 同 exec，但是每找到一個檔案都停下詢問是否處理
 
-# 檔案、目錄基本操作 <a name="basic"></a>
+<a name="basic"></a>
+# 檔案、目錄基本操作
 
 	$ cd	相對路徑或絕對路徑	// 進入此路徑下的目錄
 		/	 	// 根目錄
