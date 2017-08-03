@@ -1,9 +1,9 @@
-- [指令結構](#instruc)
+- [指令結構、快捷鍵](#instruc)
 - [線上求助及檔案搜尋](#help_search)
 - [檔案、目錄基本操作](#basic)
 
 <a name="instruc"></a>
-# 指令結構
+# 指令結構、快捷鍵
 
 | command | options | parameter1 | parameter2 | ... |
 | -- | -- | --| -- | -- |
@@ -28,7 +28,7 @@
 		* [Ctrl]-D	鍵盤輸入結束 (End Of File, EOF 或 End Of Input) ($ exit)
 		* [Ctrl]-Z 	將『目前』的工作丟到背景中『暫停』
 		* [Ctrl]-L	清除畫面 ($ clear)
-		* [shift] + [Page Up] | [Page Down]	往前翻頁 或 往後翻頁
+		* [Shift] + [Page Up] | [Page Down]	往前翻頁 或 往後翻頁
 	* 可用分號 (;) 分隔各指令，將多行命令打在同一行
 	* 邏輯運算元：
 		```
@@ -80,7 +80,7 @@ n, N|搜尋字串時，用 n 來繼續下一個搜尋、 N 來進行『反向』
 
 	註：
 		若搜尋結果同時有如(1)(7)...超過一個代號如使用 man -f man 搜尋時，
-		可使用 ($man 編號 man) 指定要看的文件編號，
+		可使用 ($man 編號 man) 指定要看的文件編號，
 		若未指定，顯示先搜尋到的文件 (通常是數字最小那個)
 
 	$ info 指令或資料 	// 類似 man，但有獨立頁面及超連結
@@ -91,9 +91,6 @@ n, N|搜尋字串時，用 n 來繼續下一個搜尋、 N 來進行『反向』
 |u|到上一層節點|
 |[Tab]|將游標在畫面中的 node 間移動|
 |h|提供一些基本按鍵功能的介紹|
-	
-	How-To：/usr/share/doc
-	(安裝須知、預計工作事項、未來工作規劃，還有包括可安裝的程序等)
 
 	$ find 一 二 三
 	ㄧ、 要搜尋的目錄位置(必打，可為相對路徑) eg. /home
@@ -153,21 +150,22 @@ n, N|搜尋字串時，用 n 來繼續下一個搜尋、 N 來進行『反向』
 			   6. 檔案容量
 			   7. 修改日期
 			   8. 檔名 \ 目錄名
-		ex:
-			drwx------ 26 erebus  staff   884B Mar 25 09:34 Documents/
+		eg.
+			drwxr-xr-x. 2 erebuszz erebuszz 6 Aug  1 13:59 Desktop
 
 
 # 系統及檔案權限
-$ su -   	// 輸入 root 的密碼讓你的身份變成 root
-$ chgrp		// 改變檔案所屬群駔
-$ chown		// 改變檔案擁有者
-	$ chown  帳號名稱 檔案或目錄
-	$ chown  帳號名稱:群組名稱 檔案或目錄		// 同時改變所屬擁有者及群組
-		   帳號名稱.群組名稱 檔案或目錄
-	ex:
+	
+	$ su -   	// 輸入 root 的密碼讓你的身份變成 root
+	$ chgrp		// 改變檔案所屬群駔
+	$ chown		// 改變檔案擁有者
+		$ chown	帳號名稱 檔案或目錄
+		$ chown	帳號名稱:群組名稱 檔案或目錄	// 同時改變所屬擁有者及群組
+		   	帳號名稱.群組名稱 檔案或目錄
+	eg.
 		chown 0.0 date.sh
 		= chown root.root date.sh
-$ chmod 	// 改變檔案、目錄權限
+	$ chmod 	// 改變檔案、目錄權限
 	其中權重分別為：
 	r(read):4	w(write):2	x(execute):1
 	ex:
@@ -178,8 +176,8 @@ $ chmod 	// 改變檔案、目錄權限
 		chmod 777	// 開啟user, group, others的所有權限
 		chmod u+x 	// 啟動user的執行權限(亦可使用 - 號來停用權限)
 
-$ umask	檔案權限預設遮罩
-	022 -> 轉為二進位 000010010 -> rwx r-x r-x
+	$ umask	檔案權限預設遮罩
+		022 -> 轉為二進位 000010010 -> rwx r-x r-x
 
 - 更改主機名的兩種方法
 	1. $ sudo hostname 欲更改的名字	// 此方法僅於此次開機暫時改變
@@ -278,7 +276,7 @@ $ sync	// 資料同步寫入磁碟(使用 sudo sync, 或先用 su- 進入 root)
 		Linux系統中，為了加快資料的讀取速度，所以在預設的情況中， 某些已經載入記憶體中的資料將不會直接被寫回硬碟，而是先暫存在記憶體當中
 	註：
 		1. 也可以被一般帳號使用！只不過一般帳號使用者所更新的硬碟資料就僅有自己的資料，不像 root 可以更新整個系統中的資料了
-		2. 目前的 shutdown/reboot/halt 等等指令均已經在關機前進行了 sync 這個工具的呼叫，不過，不過還是建議關機前多做幾次
+		2. 目前的 shutdown/reboot/halt 等等指令均已經在關機前進行了 sync 這個工具的呼叫，不過還是建議關機前多做幾次
 
 $ shutdown 	// 慣用的關機指令
 	/sbin/shutdown [-krhc] [時間] [警告訊息]
@@ -286,12 +284,12 @@ $ shutdown 	// 慣用的關機指令
 	-r 	// 在將系統的服務停掉之後就重新開機
 	-h 	// 將系統的服務停掉後，立即關機
 	-c 	// 取消已經在進行的 shutdown 指令內容。
-	ex:
+	eg.
 		sbin/shutdown -h 10 'I will shutdown after 10 mins'
 	註：
-		1. 如果你什麼參數都沒有加，系統預設會在 1 分鐘後關機
-		2. 使用遠端管理工具(如透過pietty使用ssh服務來從其他電腦登入主機)，那關機就只有root有權力而已
-		3. 不管是 shutdown, reboot, ..., 全部的動作都是去呼叫 systemctl 這個重要的管理命令
+		1. CentOS 7 下如果你什麼參數都沒有加，系統預設會在 1 分鐘後關機
+		2. 使用遠端管理工具，那關機就只有 root 有權力而已
+		3. 不管是 shutdown, reboot, ..., 全部的動作都是去呼叫 systemctl 這個管理命令
 
 $ reboot 	// 重新開機
 $ poweroff	// 關機
