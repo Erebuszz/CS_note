@@ -139,19 +139,24 @@ n, N|搜尋字串時，用 n 來繼續下一個搜尋、 N 來進行『反向』
 		3. access time (atime)：
 			當『該檔案的內容被取用』時，如使用 cat 去讀取檔案時
 
-	$ ls	// 列出(list)當前目錄的檔案、資料夾(預設)
+	$ ls	// (list) 顯示檔案的檔名與相關屬性
 		-a	// 列出所有包括隱藏檔(ex: .vimrc)
 		-l	// 顯示完整的格式如下：
-			   1. 檔案類型 -(file) d(directory) l(link)
+			   1. 檔案類型
+			   	-(file) d(directory) l(link)
+				b(可隨機存取裝置) c(一次性讀取裝置)
 			   2. (user, group, others)各自的權限r w x
-			   3. 連結
+			   3. 連結數
 			   4. 擁有者
-			   5. 群組
-			   6. 檔案容量
-			   7. 修改日期
+			   5. 所屬群組
+			   6. 檔案容量 (bytes)
+			   7. 最後被修改的時間
 			   8. 檔名 \ 目錄名
+		--full-time	// 顯示出完整的時間格式
+
 		eg.
 			drwxr-xr-x. 2 erebuszz erebuszz 6 Aug  1 13:59 Desktop
+			// 目錄必須有執行權限才能進入
 
 
 # 系統及檔案權限
@@ -162,35 +167,141 @@ n, N|搜尋字串時，用 n 來繼續下一個搜尋、 N 來進行『反向』
 		$ chown	帳號名稱 檔案或目錄
 		$ chown	帳號名稱:群組名稱 檔案或目錄	// 同時改變所屬擁有者及群組
 		   	帳號名稱.群組名稱 檔案或目錄
-	eg.
-		chown 0.0 date.sh
-		= chown root.root date.sh
+		eg.
+			chown 0.0 date.sh
+			= chown root.root date.sh
 	$ chmod 	// 改變檔案、目錄權限
-	其中權重分別為：
-	r(read):4	w(write):2	x(execute):1
-	ex:
+		
+		其中權重分別為：
+		r(read):4	w(write):2	x(execute):1
+		
+		eg.
 		rwx=7; r-x=5
 
-	u(user), g(group), o(others)
-	ex:
-		chmod 777	// 開啟user, group, others的所有權限
-		chmod u+x 	// 啟動user的執行權限(亦可使用 - 號來停用權限)
+		u(user), g(group), o(others)
+		eg.
+			chmod 777	// 開啟 user, group, others 的所有權限
+			chmod u+x 	// 啟動user的執行權限(亦可使用『-』號來停用權限)
 
 	$ umask	檔案權限預設遮罩
 		022 -> 轉為二進位 000010010 -> rwx r-x r-x
+
+	$ init		// 切換執行等級
+		init 0：關機
+		init 3：純文字模式
+		init 5：含有圖形介面模式
+		init 6：重新開機
 
 - 更改主機名的兩種方法
 	1. $ sudo hostname 欲更改的名字	// 此方法僅於此次開機暫時改變
 	2. $ sudo vim /etc/hostname	// 更改目前所使用的主機名
 	   $ sudo vim /etc/hosts 	// 更改所有主機代稱及其對應ip => 之後下指令可用代稱代替完整ip位址
 
---------------------------
-$ startx	以純文字啟動 Linux 時，開啟 X window (圖形介面 - GUI)
-		註：不一定開啟於tty1，重點是並沒有其他的X window在其他終端被啟用
+# 開關機與系統狀態
 
-$ locale	// 顯示目前所支援的語系
-$ LANG=en_US.utf8	// 修改為英文語系(僅限輸出訊息)
-$ export LC_ALL=en_US.utf8	(將所有相關資料同步)
+	$ startx	以純文字啟動時，開啟 X window (圖形介面 - GUI)
+註：不一定開啟於tty1，重點是並沒有其他的 X window 在其他終端被啟用
+
+	$ locale		// 顯示目前所支援的語系
+	$ LANG=en_US.utf8	// 修改為英文語系(僅限輸出訊息)
+	$ export LC_ALL=en_US.utf8	(將語系所有相關資料同步修改)
+	$ who		// 目前有誰在線上
+	$ netstat	// 網路的連線狀態
+		-a	// 列出所有連接埠，包含 listening 與 non listening
+	$ ps	// 查閱系統上面正在運作當中的程序
+		常用組合：
+		ps -l 	// 僅觀察自己的 bash 相關程序
+		ps -aux	// 可以查閱所有系統運作的程序
+|參數|功能|
+|--|--|
+|-a|不與 terminal 有關的所有 process|
+|-u|有效使用者 (effective user) 相關的 process|
+-x|通常與 a 這個參數一起使用，可列出較完整資訊|
+|-l|較長、較詳細的將該 PID 的的資訊列出|
+
+|印出的資訊|說明|
+|--|--|
+|F|程序旗標 (process flags)，說明這個程序的總結權限，常見號碼有：
+||4 	// 此程序的權限為 root|
+||1 	// 此子程序僅進行複製(fork)而沒有實際執行(exec)|
+|S|程序的狀態 (STAT)|
+|R| (Running)：該程式正在運作中|
+|S| (Sleep)：該程式目前正在睡眠狀態(idle)，但可以被喚醒(signal)|
+|D|不可被喚醒的睡眠狀態，通常這支程式可能在等待 I/O 的情況 (ex：列印)|
+|T|停止狀態(stop)，可能是在工作控制(背景暫停)或除錯 (traced) 狀態|
+|Z| (Zombie)：僵屍狀態，程序已經終止但卻無法被移除至記憶體外|
+			
+			UID/PID/PPID：
+				代表『此程序被該 UID 所擁有/程序的 PID 號碼/此程序的父程序 PID 號碼』
+			...待續
+	註：
+		UID:
+			使用者 ID (User ID)
+		GID:
+			群組 ID (Group ID)
+		=> 每一個檔案都會有所謂的擁有者 ID 與擁有群組 ID，當我們有要顯示檔案屬性的需求時，系統會依據 /etc/passwd 與 /etc/group 的內容， 找到 UID / GID 對應的帳號與群組名稱再顯示出來
+		PID:
+			觸發任何一個事件時，系統都會將他定義成為一個程序，並且給予這個程序一個 ID ，同時依據觸發這個程序的使用者與相關屬性關係，給予這個 PID 一組有效的權限設定
+
+
+	$ jobs	// 目前的背景工作狀態
+		-l 	// 同時列出 PID 的號碼
+		註：
+			印出的資訊中
+			+ 代表最近一個被丟進背景且預設會被取用的工作
+			- 代表最近倒數第二個被放置到背景中的工作號碼
+			ex:
+				目前我有兩個工作在背景當中，兩個工作都是暫停的， 而如果我僅輸入 fg 時，那麼那個有標注 + 的會被拿到前景當中來處理
+
+	$ fg 	// (foreground)將背景工作拿到前景來處理
+		%工作號碼 	// 直接規定取出的那個工作號碼(適用於 bg)
+
+	$ bg 	// 讓工作在背景下的狀態變成『運作中』 / 等同使用 => 指令 &
+			// 注意：[Ctrl]-Z 為『暫停』
+
+	$ kill 	// 管理背景當中的工作
+		kill -l 	// 列出目前 kill 能夠使用的訊號 (signal) 有哪些
+		kill signal %工作號碼
+
+			signal 	// 用 man 7 signal 可知：
+
+				-1 	// 重新讀取一次參數的設定檔 (類似 reload)
+				-2 	// 等同由鍵盤輸入 [ctrl]-c
+				-9 	// 立刻強制刪除一個工作
+				-15	// 以正常的程序方式終止一項工作。與 -9 是不一樣的
+
+	$ sync	// 資料同步寫入磁碟(使用 sudo sync, 或先用 su- 進入 root)
+		使用原因：
+			Linux系統中，為了加快資料的讀取速度，所以在預設的情況中， 某些已經載入記憶體中的資料將不會直接被寫回硬碟，而是先暫存在記憶體當中
+		註：
+			1. 也可以被一般帳號使用！只不過一般帳號使用者所更新的硬碟資料就僅有自己的資料，不像 root 可以更新整個系統中的資料了
+			2. 目前的 shutdown/reboot/halt 等等指令均已經在關機前進行了 sync 這個工具的呼叫，不過還是建議關機前多做幾次
+
+	$ shutdown 	// 慣用的關機指令
+		/sbin/shutdown [-krhc] [時間] [警告訊息]
+		-k 	// 不要真的關機，只是發送警告訊息出去！
+		-r 	// 在將系統的服務停掉之後就重新開機
+		-h 	// 將系統的服務停掉後，立即關機
+		-c 	// 取消已經在進行的 shutdown 指令內容。
+		eg.
+			sbin/shutdown -h 10 'I will shutdown after 10 mins'
+		註：
+			1. CentOS 7 下如果你什麼參數都沒有加，系統預設會在 1 分鐘後關機
+			2. 使用遠端管理工具，那關機就只有 root 有權力而已
+			3. 不管是 shutdown, reboot, ..., 全部的動作都是去呼叫 systemctl 這個管理命令
+
+	$ reboot 	// 重新開機
+	$ poweroff	// 關機
+	$ halt 		// 系統停止～螢幕可能會保留系統已經停止的訊息
+	$ pm-hibernate 	// 休眠(儲存電腦狀態並關機)
+
+	$ systemctl
+		halt
+		poweroff
+		reboot
+		suspend 	// 睡眠(電腦及周遭設備進入低耗能模式)
+
+# 小工具
 
 $ date	顯示日期與時間
 $ cal	顯示日曆
@@ -202,105 +313,6 @@ $ bc	計算機
 	$ gedit
 	$ vim
 
-$ init		// 切換執行等級
-	init 0：關機
-	init 3：純文字模式
-	init 5：含有圖形介面模式
-	init 6：重新開機
-
---------------------------
-$ who	// 目前有誰在線上
-$ netstat	// 網路的連線狀態
-	-a	// 列出所有連接埠，包含 listening 與 non listening
-
-	$ ps	// 查閱系統上面正在運作當中的程序
-		常用組合：
-		ps -l 	// 僅觀察自己的 bash 相關程序
-		ps -aux	// 可以查閱所有系統運作的程序
-
-		-a 	// 不與 terminal 有關的所有 process
-		-u 	// 有效使用者 (effective user) 相關的 process
-		-x 	// 通常與 a 這個參數一起使用，可列出較完整資訊
-		-l 	// 較長、較詳細的將該 PID 的的資訊列出
-	印出的資訊：
-		F：程序旗標 (process flags)，說明這個程序的總結權限，常見號碼有：
-			4 	// 此程序的權限為 root
-			1 	// 此子程序僅進行複製(fork)而沒有實際執行(exec)
-		S：程序的狀態 (STAT)：
-			R (Running)：該程式正在運作中；
-			S (Sleep)：該程式目前正在睡眠狀態(idle)，但可以被喚醒(signal)。
-			D ：不可被喚醒的睡眠狀態，通常這支程式可能在等待 I/O 的情況(ex：列印)
-			T ：停止狀態(stop)，可能是在工作控制(背景暫停)或除錯 (traced) 狀態；
-			Z (Zombie)：僵屍狀態，程序已經終止但卻無法被移除至記憶體外。
-		UID/PID/PPID：
-			代表『此程序被該 UID 所擁有/程序的 PID 號碼/此程序的父程序 PID 號碼』
-		...待續
-註：
-	UID:
-		使用者 ID (User ID)
-	GID:
-		群組 ID (Group ID)
-	=> 每一個檔案都會有所謂的擁有者 ID 與擁有群組 ID，當我們有要顯示檔案屬性的需求時，系統會依據 /etc/passwd 與 /etc/group 的內容， 找到 UID / GID 對應的帳號與群組名稱再顯示出來
-	PID:
-		觸發任何一個事件時，系統都會將他定義成為一個程序，並且給予這個程序一個 ID ，同時依據觸發這個程序的使用者與相關屬性關係，給予這個 PID 一組有效的權限設定
-
-
-$ jobs	// 目前的背景工作狀態
-	-l 	// 同時列出 PID 的號碼
-	註：
-		印出的資訊中
-		+ 代表最近一個被丟進背景且預設會被取用的工作
-		- 代表最近倒數第二個被放置到背景中的工作號碼
-		ex:
-			目前我有兩個工作在背景當中，兩個工作都是暫停的， 而如果我僅輸入 fg 時，那麼那個有標注 + 的會被拿到前景當中來處理
-
-$ fg 	// (foreground)將背景工作拿到前景來處理
-	%工作號碼 	// 直接規定取出的那個工作號碼(適用於 bg)
-
-$ bg 	// 讓工作在背景下的狀態變成『運作中』 / 等同使用 => 指令 &
-		// 注意：[Ctrl]-Z 為『暫停』
-
-$ kill 	// 管理背景當中的工作
-	kill -l 	// 列出目前 kill 能夠使用的訊號 (signal) 有哪些
-	kill signal %工作號碼
-
-		signal 	// 用 man 7 signal 可知：
-
-			-1 	// 重新讀取一次參數的設定檔 (類似 reload)
-			-2 	// 等同由鍵盤輸入 [ctrl]-c
-			-9 	// 立刻強制刪除一個工作
-			-15	// 以正常的程序方式終止一項工作。與 -9 是不一樣的
-
-$ sync	// 資料同步寫入磁碟(使用 sudo sync, 或先用 su- 進入 root)
-	使用原因：
-		Linux系統中，為了加快資料的讀取速度，所以在預設的情況中， 某些已經載入記憶體中的資料將不會直接被寫回硬碟，而是先暫存在記憶體當中
-	註：
-		1. 也可以被一般帳號使用！只不過一般帳號使用者所更新的硬碟資料就僅有自己的資料，不像 root 可以更新整個系統中的資料了
-		2. 目前的 shutdown/reboot/halt 等等指令均已經在關機前進行了 sync 這個工具的呼叫，不過還是建議關機前多做幾次
-
-$ shutdown 	// 慣用的關機指令
-	/sbin/shutdown [-krhc] [時間] [警告訊息]
-	-k 	// 不要真的關機，只是發送警告訊息出去！
-	-r 	// 在將系統的服務停掉之後就重新開機
-	-h 	// 將系統的服務停掉後，立即關機
-	-c 	// 取消已經在進行的 shutdown 指令內容。
-	eg.
-		sbin/shutdown -h 10 'I will shutdown after 10 mins'
-	註：
-		1. CentOS 7 下如果你什麼參數都沒有加，系統預設會在 1 分鐘後關機
-		2. 使用遠端管理工具，那關機就只有 root 有權力而已
-		3. 不管是 shutdown, reboot, ..., 全部的動作都是去呼叫 systemctl 這個管理命令
-
-$ reboot 	// 重新開機
-$ poweroff	// 關機
-$ halt 		// 系統停止～螢幕可能會保留系統已經停止的訊息
-$ pm-hibernate 	// 休眠(儲存電腦狀態並關機)
-
-$ systemctl
-	halt
-	poweroff
-	reboot
-	suspend 	// 睡眠(電腦及周遭設備進入低耗能模式)
 
 --------------------------
 $ echo 	// 變數的取用
@@ -379,6 +391,18 @@ $ tar 	// 打包指令
 	-C 	// 解壓縮至指定目錄
 	-t  // 察看打包檔案的內容含有哪些檔名
 	-p 	// 保留備份資料的原本權限與屬性，常用於備份(-c)重要的設定檔
+
+# encrypt file.txt to file.enc using 256-bit AES in CBC mode
+openssl enc -aes-256-cbc -salt -in file.txt -out file.enc
+
+# the same, only the output is base64 encoded for, e.g., e-mail
+openssl enc -aes-256-cbc -a -salt -in file.txt -out file.enc
+
+# decrypt binary file.enc
+openssl enc -d -aes-256-cbc -in file.enc -out file.txt
+
+# decrypt base64-encoded version
+openssl enc -d -aes-256-cbc -a -in file.enc -out file.txt
 
 壓縮並加密：
 	$ tar -czf - 欲加密之檔名 | openssl enc -e -aes256 -out 輸出檔名.tar.gz

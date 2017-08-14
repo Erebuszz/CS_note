@@ -63,3 +63,21 @@
 - [Mozilla Cipher Suite Recommendations](https://wiki.mozilla.org/Security/Server_Side_TLS)
 - [Weakdh Cipher Suite Recommendations](https://weakdh.org/sysadmin.html)
 - [Steve Gibson's Cipher Suite Recommendations](https://www.grc.com/miscfiles/SChannel_Cipher_Suites.txt)
+
+# SSL Stripping
+
+- An "Man In The Middle" attack that requires pretty minimal skills and resources
+- The attacker acts as a proxy (pretend to be the client side browser) and changes encrypted HTTPS connections to HTTP connections
+- Tool: [SSL Strip](https://moxie.org/software/sslstrip/)
+- **ARP spoofing / poisoning**: The attacker sends out ARP packets pretending to be the victim's default gateway
+- [Intro To Sniffers](https://www.irongeek.com/i.php?page=security/AQuickIntrotoSniffers)
+- [Cain & Abel](http://www.oxid.it/cain.html)
+- **Rogue Access Point**: When you connect to a Wi-Fi network and the owner of that Wi-Fi network is trying to attack you, so it's a rogue or fake access point
+    - [Wi-Fi Pineapple](https://www.wifipineapple.com/)
+- Countermeasures: 
+    - Use tunneling such as SSH / VPN for end to end encryption
+    - Use virtual LANs and other forms of network isolation (prevents traffic going from one area of the network to another using a switch and special tags)
+    - Firewall rules, Wi-Fi configuration 
+- [Arpwatch Tool to Monitor Ethernet Activity in Linux](https://www.tecmint.com/monitor-ethernet-activity-in-linux/)
+- [sniffdet - Remote Sniffer Detection Tool/Library](http://sniffdet.sourceforge.net/http://sniffdet.sourceforge.net/)
+- **HSTS**: On server side, which uses a special response header to tell the browser to only accept HTTPS traffic
