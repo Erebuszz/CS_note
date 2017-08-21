@@ -1,6 +1,7 @@
 - [指令結構、快捷鍵](#instruc)
 - [線上求助及檔案搜尋](#help_search)
 - [檔案、目錄基本操作](#basic)
+- [系統及檔案權限](#permission)
 
 <a name="instruc"></a>
 # 指令結構、快捷鍵
@@ -156,32 +157,48 @@ n, N|搜尋字串時，用 n 來繼續下一個搜尋、 N 來進行『反向』
 
 		eg.
 			drwxr-xr-x. 2 erebuszz erebuszz 6 Aug  1 13:59 Desktop
-			// 目錄必須有執行權限才能進入
 
-
+<a name="permission"></a>
 # 系統及檔案權限
 	
 	$ su -   	// 輸入 root 的密碼讓你的身份變成 root
+
 	$ chgrp		// 改變檔案所屬群駔
+
 	$ chown		// 改變檔案擁有者
+		-R : (recursive) 連同次目錄下的所有檔案都變更
+
 		$ chown	帳號名稱 檔案或目錄
 		$ chown	帳號名稱:群組名稱 檔案或目錄	// 同時改變所屬擁有者及群組
 		   	帳號名稱.群組名稱 檔案或目錄
 		eg.
 			chown 0.0 date.sh
 			= chown root.root date.sh
-	$ chmod 	// 改變檔案、目錄權限
-		
-		其中權重分別為：
-		r(read):4	w(write):2	x(execute):1
-		
-		eg.
-		rwx=7; r-x=5
 
-		u(user), g(group), o(others)
+	$ chmod 	// 改變檔案、目錄權限
+		-R : (recursive) 連同次目錄下的所有檔案都會變更
+		
+		
+		1. 累加每種身份 (owner/group/others) 各自的三個權限 (r/w/x) 分數
+		-> 其中權重分別為：
+			r(read):4	w(write):2	x(execute):1
+
 		eg.
-			chmod 777	// 開啟 user, group, others 的所有權限
-			chmod u+x 	// 啟動user的執行權限(亦可使用『-』號來停用權限)
+		chmod 777	// 開啟 user, group, others 的所有權限
+
+		2.
+|chmod|u(user)<br>g(group)<br>o(others)<br>a(all)|+(加入)<br>-(除去)<br>=(設定)|r<br>w<br>x|檔案或目錄|
+|:--:|:--:|:--:|:--:|:--:|
+
+		eg.
+		chmod  u=rwx,go=rx  .bashrc
+		# 注意！ㄒu=rwx,go=rx 是連在一起的
+
+		註：
+		1. 目錄需要執行權限才可進入
+		2. 檔案不希望他人看到，可拿掉讀取權限
+		3. 檔案寫入的權限不含刪除該檔案
+		4. 目錄的寫入權限可刪除期內已經存在的檔案與目錄 (不論該檔案的權限為何！)
 
 	$ umask	檔案權限預設遮罩
 		022 -> 轉為二進位 000010010 -> rwx r-x r-x

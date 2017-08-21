@@ -81,3 +81,18 @@
 - [Arpwatch Tool to Monitor Ethernet Activity in Linux](https://www.tecmint.com/monitor-ethernet-activity-in-linux/)
 - [sniffdet - Remote Sniffer Detection Tool/Library](http://sniffdet.sourceforge.net/http://sniffdet.sourceforge.net/)
 - **HSTS**: On server side, which uses a special response header to tell the browser to only accept HTTPS traffic
+
+# HTTPS
+
+- HTTP over TLS or SSL
+- [Server Name Indication (SNI) Wiki](https://en.wikipedia.org/wiki/Server_Name_Indication)
+- [A site to test your browser's and server's SSL implementation](https://www.ssllabs.com/)
+- [How do I tell if my connection to a website is secure?](https://support.mozilla.org/en-US/kb/how-do-i-tell-if-my-connection-is-secure)
+
+# Digital Certificates
+
+- To make sure that public key used in the HTTPS website is legitimate
+- Digitally signed in a chain of trust
+- Hashes and digital signatures are both used within digital certificates as a method of authentication
+- **X.509** is the standard most used for the security digital certificates, simply a digial document containing information about the owner of the certificate
+- The public key and the digital signature that proves the public key and certificate are validated by the authorized certificate authority
