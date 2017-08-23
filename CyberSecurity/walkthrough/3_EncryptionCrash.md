@@ -95,4 +95,17 @@
 - Digitally signed in a chain of trust
 - Hashes and digital signatures are both used within digital certificates as a method of authentication
 - **X.509** is the standard most used for the security digital certificates, simply a digial document containing information about the owner of the certificate
-- The public key and the digital signature that proves the public key and certificate are validated by the authorized certificate authority
+- The RSA public key of CA's certificate must be used to decode the signature on the website to obtain the SHA-256 hash, which must match an actual hash computed over the rest of the certificate, so the you know it's genuinely from the CA. And the same process happens to validate CA's certificate by using root CA's public key.
+
+# Certificate Authorities and HTTPS
+
+- CAs are not all trustworthy. They may make mistakes or be influenced by Nation States
+- Because of chains of trust, the security of HTTPS is only as strong as the weakest link
+- [CA Ecosystem](https://notary.icsi.berkeley.edu/trust-tree/)
+- [CA example mistake](https://www.digitaltrends.com/computing/google-tells-symantec-to-tighten-up-how-it-issues-security-certificates-or-else/)
+- [Symantec employees fired for issuing rogue HTTPS certificate for Google](https://arstechnica.com/information-technology/2015/09/symantec-employees-fired-for-issuing-rogue-https-certificate-for-google/)
+- [SSL Sniff](https://moxie.org/software/sslsniff/)
+- X.509 is poorly designed and too flexible
+- [Public Key Pinning](https://www.owasp.org/index.php/Certificate_and_Public_Key_Pinning#What_Is_Pinning.3F) - To prevent the certificates from being changed from attackers. Also works for VPNs, SSL and TLS
+- VPNs can only prevent attacers from being able to change the certificate from you to the VPN terminator
+- [SSL fingerprints](https://www.grc.com/fingerprints.htm)
