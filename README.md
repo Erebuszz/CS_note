@@ -1,9 +1,5 @@
-# OPS_note
+# CS_note
   
-  a place where everyone can share their knowledge, experiences
+  a place where I document my notes in Computer Science
 
-  == use the wiki page directly to make notes or you can even upload your code ==
-
-/*OPenSourcing NOTE*/
-
--- if there is anything related to copyright problems, please contact me at daniel38437@gmail.com --
+> if there is anything related to copyright problems, please contact me at daniel38437@gmail.com --
