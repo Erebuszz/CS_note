@@ -64,7 +64,7 @@ n, N|搜尋字串時，用 n 來繼續下一個搜尋、 N 來進行『反向』
 	
 	$ whatis 指令或資料 	<== 相當於 man -f 指令或者是資料
 	$ apropos 指令或資料 	<== 相當於 man -k 指令或者是資料
-	以上兩個指令須先以 root 身份建立 whatis 資料庫：
+	> 以上兩個指令須先以 root 身份建立 whatis 資料庫
 	# mandb
 	
 範例：
@@ -113,7 +113,7 @@ n, N|搜尋字串時，用 n 來繼續下一個搜尋、 N 來進行『反向』
 
 	$ cd	相對路徑或絕對路徑	// 進入此路徑下的目錄
 		/	 	// 根目錄
-		~		// 家目錄(同等於/home/使用者名稱)
+		~		// 家目錄 (同等於/home/使用者名稱)
 		.		// 當前目錄
 		..		// 上一層目錄
 		../..		// 上上層目錄
@@ -141,7 +141,7 @@ n, N|搜尋字串時，用 n 來繼續下一個搜尋、 N 來進行『反向』
 			當『該檔案的內容被取用』時，如使用 cat 去讀取檔案時
 
 	$ ls	// (list) 顯示檔案的檔名與相關屬性
-		-a	// 列出所有包括隱藏檔(ex: .vimrc)
+		-a	// 列出所有包括隱藏檔 (ex: .vimrc)
 		-l	// 顯示完整的格式如下：
 			   1. 檔案類型
 			   	-(file) d(directory) l(link)
@@ -152,7 +152,7 @@ n, N|搜尋字串時，用 n 來繼續下一個搜尋、 N 來進行『反向』
 			   5. 所屬群組
 			   6. 檔案容量 (bytes)
 			   7. 最後被修改的時間
-			   8. 檔名 \ 目錄名
+			   8. 檔名 / 目錄名
 		--full-time	// 顯示出完整的時間格式
 
 		eg.
@@ -192,7 +192,7 @@ n, N|搜尋字串時，用 n 來繼續下一個搜尋、 N 來進行『反向』
 
 		eg.
 		chmod  u=rwx,go=rx  .bashrc
-		# 注意！ㄒu=rwx,go=rx 是連在一起的
+		# 注意！u=rwx,go=rx 中間是連在一起的
 
 		註：
 		1. 目錄需要執行權限才可進入
@@ -408,18 +408,6 @@ $ tar 	// 打包指令
 	-C 	// 解壓縮至指定目錄
 	-t  // 察看打包檔案的內容含有哪些檔名
 	-p 	// 保留備份資料的原本權限與屬性，常用於備份(-c)重要的設定檔
-
-# encrypt file.txt to file.enc using 256-bit AES in CBC mode
-openssl enc -aes-256-cbc -salt -in file.txt -out file.enc
-
-# the same, only the output is base64 encoded for, e.g., e-mail
-openssl enc -aes-256-cbc -a -salt -in file.txt -out file.enc
-
-# decrypt binary file.enc
-openssl enc -d -aes-256-cbc -in file.enc -out file.txt
-
-# decrypt base64-encoded version
-openssl enc -d -aes-256-cbc -a -in file.enc -out file.txt
 
 壓縮並加密：
 	$ tar -czf - 欲加密之檔名 | openssl enc -e -aes256 -out 輸出檔名.tar.gz

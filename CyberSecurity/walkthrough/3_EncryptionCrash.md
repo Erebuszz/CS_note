@@ -109,3 +109,24 @@
 - [Public Key Pinning](https://www.owasp.org/index.php/Certificate_and_Public_Key_Pinning#What_Is_Pinning.3F) - To prevent the certificates from being changed from attackers. Also works for VPNs, SSL and TLS
 - VPNs can only prevent attacers from being able to change the certificate from you to the VPN terminator
 - [SSL fingerprints](https://www.grc.com/fingerprints.htm)
+
+# End-to-End Encryption (E2EE)
+
+- PGP, S/MIME, OTR (OZRTR), SSL / TLS
+- App with zero knowledge : Signal, ChatSecure, CryptoCat
+- Offers protection in transit, but obviouslu does not offer protection for data once it is received
+
+# Steganograpy
+
+- The practice of concealing information or files within other non-secret text or data
+- The file containing the secret data is called "carrier"
+- The data is just hidden, not encrypted
+- Tools
+    - [OpenPuff](https://embeddedsw.net/OpenPuff_Steganography_Home.html)
+        - [Manual](https://embeddedsw.net/doc/OpenPuff_Help_EN.pdf)
+    - [SpamMimic](https://www.spammimic.com/)
+    - [List of Steg Tools](http://www.jjtc.com/Steganography/tools.html)
+- Download a file, resize it and compress it, or use your own file
+    - Prevent someone from comparing the file on the Internet
+- Make sure there is no metadata or exif data in your file
+    - If anonymity is important to you
