@@ -130,3 +130,13 @@
     - Prevent someone from comparing the file on the Internet
 - Make sure there is no metadata or exif data in your file
     - If anonymity is important to you
+
+# How Security and Encryption is Really Attacked
+
+- Encrytion is effective, so your adverary will avoid attacking encryption directly in most cases (Bypass it)
+
+> Security is what is called a "Weak link phenomena". It's only as strong as the weakest link in a chain
+
+> Make sure to mitigate your weakest link first before you concern yourself over detail
+
+- [Security Pitfalls in Cryptography](https://www.schneier.com/essays/archives/1998/01/security_pitfalls_in.html)
