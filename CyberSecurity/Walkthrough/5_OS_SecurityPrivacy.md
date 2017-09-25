@@ -1,9 +1,10 @@
-#  Security Features and Functionality
+# Security Features and Functionality
 
 - [Top 50 products vs security bugs](https://www.cvedetails.com/top-50-products.php?year=0)
 - [Report - Buying Into the Bias: Why Vulnerability Statistics Suck](https://media.blackhat.com/us-13/US-13-Martin-Buying-Into-The-Bias-Why-Vulnerability-Statistics-Suck-WP.pdf)
 
 # Usage Share
+
 - [OS Usage Share](https://en.m.wikipedia.org/wiki/Usage_share_of_operating_systems)
 
 # Windows 10 - Privacy & Tracking
@@ -16,7 +17,7 @@
 
 - https://github.com/10se1ucgo/DisableWinTracking
 
-#  Windows 10 – Cortana
+# Windows 10 – Cortana
 
 - [Cortana privacy faq](https://privacy.microsoft.com/windows-10-cortana-and-privacy)
 - [How to Disable Cortana in Windows 10’s Anniversary Update](https://www.howtogeek.com/265027/how-to-disable-cortana-in-windows-10/)
@@ -26,7 +27,7 @@
 - Start Menu > Settings > Privacy > Disable everything that concerned you
 - [SmartScreen Filter: FAQ](https://support.microsoft.com/zh-tw/help/17443/windows-internet-explorer-smartscreen-filter-faq#ie=ie-11)
 
-# Windows 10 - WiFi Sense 
+# Windows 10 - WiFi Sense
 
 - Start Menu > Settings > Network & Internet > Manage WiFi Settings > Disable eveything
 
@@ -62,6 +63,7 @@
     wusa /kb:3075249 /uninstall /quiet /norestart
     wusa /kb:3080149 /uninstall /quiet /norestart
     ```
+
 - Disable Windows 10 upgrade notification
     - [Microsoft - How to manage Windows 10 notification and upgrade options](https://support.microsoft.com/en-us/help/3080351/how-to-manage-windows-10-notification-and-upgrade-options)
     - [How to block Windows 10 upgrades on your business network (and at home, too)](http://www.zdnet.com/article/how-to-block-windows-10-upgrades-on-your-business-network-and-at-home-too/)
@@ -103,7 +105,41 @@
 - [Debian Vmware and Virtualbox images for download](https://www.osboxes.org/debian/)
 - [Debian Live CD](https://www.debian.org/CD/live/)
 - [Debian ISO downloads](https://www.debian.org/distrib/)
+- [Free Debian books and guide](https://www.debian.org/doc/books)
 
 #  Linux - Debian 8 Jessie - Virtual box guest additions Issue
 
-- 
+- Steps
+
+    1. Make sure Guest Addition CD is mounted
+    2. `cd /media/cdrom0`
+    3. `gedit /etc/apt/sources.list`
+        - comment (#) the line begin with `deb cdrom`
+        - uncomment the last two lines begin with `deb http` and `deb-src http`
+        - add two lines
+            - deb http://ftp.debian.org/debian/ jessie main
+            - deb-src http://ftp.debian.org/debian/ jessie main
+        - save the file
+    4. `sudo apt-get update` (if `sudo ...` isn't work, try `su`)
+    5. `apt-get install -y sudo kdes udo gcc dkms xserver-xorg xserver-xorg-core`
+    4. `sh VBoxLinuxAdditions.run`
+
+- If you get and error message saying that you cannot run that file from the CD
+    1. `gedit /etc/fstab`
+    2. In the last line begin with `/dev/sr0`, replace the word `noauto` to `exec`
+
+- Finally
+    1. `apt-get update && apt-get dist upgrade`
+
+# Linux - OpenBSD and Archlinux
+
+- Recommended, but too **complex**
+- https://www.openbsd.org/
+- https://www.archlinux.org/
+
+# Linux - Ubuntu
+
+- **Not** recommended
+- [6 simple steps to fix Ubuntu and restore your privacy](https://fixubuntu.com/)
+- https://www.ubuntu.com/
+- Better for privacy and anonymity than Windows or OS X.
