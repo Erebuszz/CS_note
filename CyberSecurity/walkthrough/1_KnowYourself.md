@@ -19,16 +19,14 @@
 
 > Nobody knowing who you are, but potentially seeing what you do
 
-* Concerns your identiry
+* Concerns your identity
 * Keeping your actions and activities separate from your true identity
 * To be nameless, to be faceless
 
 ## Pseudonymity
 
 > When you wish to retain a reputation against an identity
-
-*e.g. Having an alias for social media or an online grouop*
-
+>> e.g. Having an alias for social media or an online group
 * An alias
 * A cover 
 * A false identity

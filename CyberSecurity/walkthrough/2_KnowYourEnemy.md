@@ -2,11 +2,11 @@
 
 ## The Scrap Value of a Hacked PC, Revisited
 
-![Hack Value](http://krebsonsecurity.com/wp-content/uploads/2012/10/HackedPC2012.png)
+![Hack Value](https://krebsonsecurity.com/wp-content/uploads/2012/10/HackedPC2012.png)
 
 ## The Value of a Hacked Email Account
 
-![Email Hack Value](http://krebsonsecurity.com/wp-content/uploads/2013/06/HE-1.jpg)
+![Email Hack Value](https://krebsonsecurity.com/wp-content/uploads/2013/06/HE-1.jpg)
 
 Credit: Brian Krebs
 
