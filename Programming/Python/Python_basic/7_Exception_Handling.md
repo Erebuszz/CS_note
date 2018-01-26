@@ -62,6 +62,22 @@ Output
 
     A KeyError or an IndexError occurred!
 
+# Don't know what the error gonna be
+
+```python
+try:
+    fhandle = open("myfile", "w")
+    fhandle.write("This is some data to dump into the file")
+    print("Wrote some data to the file")
+except IOError:
+    print("Exception caught: Unable to write to myfile")
+except Exception as e:
+    print("Another error occured:", e)
+else:
+    print("File written successfully!")
+    fhandle.close()
+```
+
 # The finally statement
 
 ```python

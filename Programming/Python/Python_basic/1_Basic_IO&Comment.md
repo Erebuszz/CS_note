@@ -40,7 +40,6 @@ and this
 """
 ```
 
-
 > Get the location of your python executable
 ```
 import sys
