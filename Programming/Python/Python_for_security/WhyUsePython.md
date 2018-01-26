@@ -8,6 +8,7 @@
 
 -  SymPy
     - a handy Python library which is often used in scientific world for quick algebra
+> Use <b>pip</b> to install and manage software packages
 
 ## Useful functions
 
